@@ -1,0 +1,12 @@
+name: YT Downloader Dev Container
+services:
+  yt-downloader:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    volumes:
+      - ..:/workspace:cached
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    environment:
+      - NODE_ENV=development
+    working_dir: /workspace

@@ -1,0 +1,4 @@
+aiohttp
+nodejs_wheel
+pyinstaller
+Nuitka

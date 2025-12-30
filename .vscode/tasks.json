@@ -1,0 +1,46 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Install required modules",
+      "type": "shell",
+      "command": "python3 -m venv .venv && source ./.venv/bin/activate && python3 -m pip install -r requirements.txt",
+      "group": "build",
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Build binary [PyInstaller]",
+      "type": "shell",
+      "command": "source ./.venv/bin/activate && python3 -m pyinstaller ./src/yt_downloader.py --onefile",
+      "group": "build",
+      "runOptions": {
+        "runOn": "default"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    },
+    {
+      "label": "Build binary [Nuitka]",
+      "type": "shell",
+      "command": "source ./.venv/bin/activate && python3 -m nuitka --follow-imports --standalone --enable-plugin=tk-inter ./src/yt_downloader.py",
+      "group": "build",
+      "runOptions": {
+        "runOn": "default"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      }
+    }
+  ]
+}

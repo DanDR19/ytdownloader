@@ -1,0 +1,16 @@
+&&{
+    "name": "YT Downloader",
+    "dockerComposeFile": "../.devcontainer/docker-compose.yaml",
+    "service": "yt-downloader",
+    "workspaceFolder": "/workspace",
+    "shutdownAction": "stopCompose",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "esbenp.prettier-vscode"
+            ]
+        }
+    }
+}
