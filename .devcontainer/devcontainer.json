@@ -1,4 +1,4 @@
-&&{
+{
     "name": "YT Downloader",
     "dockerComposeFile": "../.devcontainer/docker-compose.yaml",
     "service": "yt-downloader",
