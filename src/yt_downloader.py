@@ -34,7 +34,7 @@ class YTDownloader:
     
     def _merge_audio_video(self, video_name):
         command = ["ffmpeg", "-nostdin", "-y", "-i", f"{self.__files_dir}/mp4/{video_name}_no_audio.mp4", "-i", f"{self.__files_dir}/mp3/{video_name}.mp3", "-c:v", "copy", "-c:a", "aac", f"{self.__files_dir}/mp4/{video_name}.mp4"]
-        process = subprocess.Popen(command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, start_new_session=True)
+        subprocess.Popen(command, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, start_new_session=True)
 
         attempts = 0
         while not path.exists(f"{self.__files_dir}/mp4/{video_name}.mp4") and attempts < 30:

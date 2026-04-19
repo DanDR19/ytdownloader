@@ -13,4 +13,4 @@ RUN set -xe && \
 RUN ln -s /usr/bin/python3 /usr/bin/python
 
 RUN python -m pip config set global.break-system-packages true 
-RUN pip install aiohttp nodejs_wheel pytube
+RUN pip install aiohttp nodejs_wheel
